@@ -1,0 +1,24 @@
+<div class="clearfic col col-12" [hidden]="imagesState.isShowSSRImages" hidden>
+    <amp-list 
+        src="/all"
+        [src]="imagesState.imagesApi"
+        layout="fixed-height"
+        height="400"
+        [height]="imagesState.isGridView ? ceil(currentImagesArray.items.length/2) * 200 : currentImagesArray.items.length * 400">
+        <template type="amp-mustache">
+            <div class="col col-6 center gridHeight"
+            [class]="imagesState.isGridView ? 'col col-6 center gridHeight' : 'col col-12 center gramHeight'"
+            on="tap:seeMoreImageLightbox, 
+            AMP.setState({imagesState: {isShowRecentlyViewed: true, 
+            selectedImageUrl: '{{url}}', selectedTitle: '{{title}}', 
+            selectedDescription: '{{description}}', 
+            recentlyViewed: imagesState.recentlyViewed.concat( '{{url}}' ) }} )"
+            role="button"
+            tabindex="0">
+                <amp-img class="m1 box-shadow hover-box" 
+                [class]="imagesState.isGridView ? 'm1 box-shadow hover-box' : 'box-shadow hover-box'" src="{{url}}" layout="responsive" width="1000" height="1000"></amp-img>
+                <h4 class="left-align m1" [class]="imagesState.isGridView ? 'left-align m1' : 'left-align m2'">{{title}}</h4>
+            </div>
+        </template>
+    </amp-list>
+</div>

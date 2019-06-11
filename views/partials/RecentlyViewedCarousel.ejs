@@ -1,0 +1,26 @@
+
+<h3 hidden [hidden]="!imagesState.isShowRecentlyViewed" class="m1 left-align col col-12 bold black underline">Recently Viewed</h3>
+<div class="mb2 clearfix col col-12" hidden [hidden]="!imagesState.isShowRecentlyViewed">
+    <amp-list [src]="imagesState" layout="fixed-height" height="110">
+        <template type="amp-mustache">
+            <amp-carousel controls layout="fixed-height" height="105" type="carousel" class="p1 left-align">
+                {{#recentlyViewed}}
+                    <amp-img layout="fixed" width="100" height="100" class="mx1" src="{{.}}"></amp-img>
+                {{/recentlyViewed}}
+            </amp-carousel>
+        </template>
+    </amp-list>
+</div>
+
+<!-- <div class="mb2 clearfix col col-12" hidden [hidden]="!imagesState.isShowRecentlyViewed">
+        <h3 class="bold black underline m1 left-align">Recently Viewed</h3>
+        <amp-list [src]="imagesState" layout="fixed-height" height="110">
+            <template type="amp-mustache">
+                <amp-carousel controls layout="fixed-height" height="105" type="carousel" class="p1">
+                    {{#recentlyViewed}}
+                        <amp-img layout="fixed" width="100" height="100" class="mx1" src="{{.}}"></amp-img>
+                    {{/recentlyViewed}}
+                </amp-carousel>
+            </template>
+        </amp-list>
+    </div> -->

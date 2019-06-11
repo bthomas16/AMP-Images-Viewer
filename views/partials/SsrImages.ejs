@@ -1,0 +1,19 @@
+<div [hidden]="!imagesState.isShowSSRImages" class="clearfix col col-12 mx-auto center">
+    <% for (var i = 0; i < response.items.length; i++)  { %>
+        <div class="col col-6 center" [class]="imagesState.isGridView ? 'col col-6 center' : 'col col-12 center'"
+        on="tap:seeMoreImageLightbox,
+        AMP.setState({imagesState: 
+            { isShowRecentlyViewed: true,
+            selectedImageUrl: '<%= response.items[i].url %>',
+            selectedTitle: '<%= response.items[i].title %>',
+            selectedDescription: '<%= response.items[i].description %>',
+            recentlyViewed: imagesState.recentlyViewed.concat( '<%= response.items[i].url %>' )
+            }} )">
+            <amp-img class="m1 box-shadow hover-box" 
+            [class]="imagesState.isGridView ? 'm1 box-shadow hover-box' : 'box-shadow hover-box'"
+            src="<%= response.items[i].url %>"
+            layout="responsive" width="1000" height="1000"></amp-img>
+            <h4 class="left-align m1" [class]="imagesState.isGridView ? 'left-align m1' : 'left-align m2'"><%= response.items[i].title %></h4>
+        </div>
+    <% } %>
+</div>

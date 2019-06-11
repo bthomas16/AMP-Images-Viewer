@@ -1,0 +1,43 @@
+<amp-state id="imagesState">
+    <script type="application/json">
+        {
+            "selectedCategory": "All",
+            "isGridView": true,
+            "isShowSSRImages": true,
+            "isShowVertical": false,
+            "selectedImageUrl": "",
+            "imagesApi": "/?category=All",
+            "isShowRecentlyViewed": false,
+            "apiCategoryOptions": [
+                "all",
+                "earth",
+                "wind",
+                "fire"
+            ],
+            "recentlyViewed": [],
+            "showMoreRelatedImages": []
+        }
+    </script>
+</amp-state>
+
+<amp-state id="currentImagesArray" [src]="imagesState.imagesApi"></amp-state>
+
+
+
+<!-- amp-bind
+1. 2 types -> explicit => ready to use out the box, good to set server side variables here
+2. api / src attribute
+
+
+1. How to initalize
+    a. First user-interaction => click event
+    b. Scroll events don't count as a user-interaction to trigger the amp-bind
+    c. A completed network request from amp-list will initialize amp-bind
+2. What can be set to AMP bind
+    a. sometimes wrapping strings in quotes
+    b. can't bind to objects, have to 
+
+
+    amp-list
+
+1. If you have to depend on a list with incosistent heights to initially render content, it is best to do this through ssr. -->

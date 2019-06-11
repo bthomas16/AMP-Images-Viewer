@@ -1,0 +1,18 @@
+
+<div class="clearfix col col-12">
+    <amp-list noloading layout="fixed-height" height="50" src="/Options">
+        <template type="amp-mustache">
+            <div class="col col-3 pt1 px1">
+                <button on="tap: AMP.setState({imagesState: {selectedCategory: '{{.}}', isShowSSRImages: false,  imagesApi: '/'+ '{{.}}' }})" role="button" tabindex="0"
+                class="btn bg-white black col-12" [class]="imagesState.selectedCategory == '{{.}}' ? 'btn bg-blue white border col-12 p1' : 'btn bg-white black col-12 p1'">{{.}}</button>
+            </div>
+        </template>
+    </amp-list>
+</div>
+
+<div class="col col-6 center my1">
+    <button role="button" tabindex="=0" on="tap: AMP.setState({imagesState: { isGridView: true}})" class="p1 center h3 box-shadow col-10 mx-auto btn bg-blue white" [class]="imagesState.isGridView ? 'selected p1 center h3 box-shadow col-10 mx-auto btn bg-blue white' : 'p1 center h3 box-shadow col-10 mx-auto btn bg-blue white'">Grid</button>
+</div>
+<div class="col col-6 center my1">
+    <button role="button" tabindex="=0" on="tap: AMP.setState({imagesState: { isGridView: false }})" class="p1 center h3 box-shadow col-10 mx-auto btn bg-green white" [class]="!imagesState.isGridView ? 'selected p1 center h3 box-shadow col-10 mx-auto btn bg-green white' : 'p1 center h3 box-shadow col-10 mx-auto btn bg-green white'">Gram</button>
+</div>

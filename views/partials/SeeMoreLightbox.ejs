@@ -1,0 +1,13 @@
+<amp-lightbox id="seeMoreImageLightbox" layout="nodisplay">
+    <div class="clearfix col col-12 relative lightbox">
+        <div class="col-12 absolute z4 right-align mr3 bold h2 m0 white" role="button" tabindex="0" on="tap: seeMoreImageLightbox.close">
+            <p class="mr2 mt1 white">X</p>
+        </div>
+        <amp-img layout="responsive" width="500" height="500" class="box-shadow" src="/" [src]="imagesState.selectedImageUrl"></amp-img>
+        <div class="clearfix col col-12 p1 center">
+        <p class="left-align" [text]="imagesState.selectedTitle"></p>
+        <p class="left-align" [text]="imagesState.selectedDescription">{{description}}</p>
+        <button class="btn bg-red white p1 rounded center mx-auto col-8" on="tap: seeMoreImageLightbox.close">CLOSE</button>
+        </div>
+    </div>
+</amp-lightbox>
